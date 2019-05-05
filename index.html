@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<title> PacMan </title>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.validate.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styleFile.css">
+    <link rel="icon" href="pacmanPlayerRightLogo.png">
+    <META NAME="keywords" CONTENT="pacman, aplication">
+    <META NAME="description"
+        CONTENT="This aplication was created by: Liron Refaeli, id:205925100. David Rosenberg, id: 308399724.">
+
+</head>
+
+
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <header>
+        <nav>
+
+            <div id="scrollmenu" class="scrollmenu">
+                <a href="#" onclick="display('welcome')"><i class="fa fa-home"></i> Welcome</a>
+                <a href="#" onclick="display('register')"> <i class="fa fa-address-card"></i> Register</a>
+                <a href="#" onclick="display('login')"> <i class="fa fa-user"></i> Login</a>
+                <a href="#about"> <i class="fa fa-question-circle"></i> About</a>
+                <img id="logo" src="pacmanLogo.jpg">
+                <div id="logoutDiv" class="logout"></div>
+                <div id="currentUserDiv"></div>
+
+            </div>
+
+        </nav>
+    </header>
+    <br>
+    <br>
+
+
+    <div id="welcome" class="centerDiv">
+        <button id="loginBtn" type="Submit" onclick="display('login')" class="button"
+            style="vertical-align:middle"><span>Login </span>
+        </button>
+        <button id="registerBtn" type="Submit" onclick="display('register')" class="button"
+            style="vertical-align:middle"><span>Register </span>
+        </button>
+    </div>
+
+    <div id="register" class="centerDiv" style="display:none">
+        <div class="container">
+            <form id=registerValidate>
+                <div class="form">
+                    <h3>Register</h3>
+                    <div >
+                        <input id="username" class="input" type="text" placeholder="User Name"  name="username" required
+                            autocomplete="on" />
+                    </div>
+                    <br>
+                    <div >
+                        <input id="password" class="input" type="password" placeholder="Password" name="password" 
+                            required autocomplete="on" />
+                    </div>
+
+                    <br>
+                    <div >
+                        <input id="first" class="input" type="text" placeholder="First Name" required name="first" 
+                            autocomplete="given-name" />
+                    </div>
+                    <br>
+                    <div>
+                        <input id="last" class="input" type="text" placeholder="Last Name" required name="last" 
+                            autocomplete="family-name" />
+                    </div>
+                    <br>
+                    <div >
+                        <input id="Email" class="input" type="email" placeholder="Email Address" name="Email" required
+                            autocomplete="email" />
+                    </div>
+
+                    <h6>Date of Birth:</h6>
+                    <div>
+                        <select id="day" class="input" name="day">
+                            <option>Day</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="20">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        <br>
+                        <br>
+                        <select id="month" class="input" name="month">
+                            <option>Month:</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <br>
+                        <br>
+                        <select id="year" class="input" name="year">
+                            <option>Year:</option>
+                            <option value="1980">1980</option>
+                            <option value="1981">1981</option>
+                            <option value="1982">1982</option>
+                            <option value="1983">1983</option>
+                            <option value="1984">1984</option>
+                            <option value="1985">1985</option>
+                            <option value="1986">1986</option>
+                            <option value="1987">1987</option>
+                            <option value="1988">1988</option>
+                            <option value="1989">1989</option>
+                            <option value="1990">1990</option>
+                            <option value="1991">1991</option>
+                            <option value="1992">1992</option>
+                            <option value="1993">1993</option>
+                            <option value="1994">1994</option>
+                            <option value="1995">1995</option>
+                            <option value="1996">1996</option>
+                            <option value="1997">1997</option>
+                            <option value="1998">1998</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                        </select>
+                        <br>
+                        <div id="bderror" class="error"></div>
+                    </div>
+                    <br>
+
+                    <button onclick="addNewUser()">Sign Up</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div id="login" class="centerDiv" style="display: none">
+        <div class="container">
+            <form id="LogInValidate">
+                <div class="form">
+                    <h3>Login</h3>
+                    <div>
+                        <input id="LogInUserName" class="input" name="LogInUserName"  type="text"  placeholder="User Name"
+                            autocomplete="on" required />
+                        <div id="errUserName" class="error"></div>
+                    </div>
+                    <br>
+                    <div>
+                        <input id="LogInPassWord" class="input" name="LogInPassWord" type="password" placeholder="Password" 
+                             autocomplete="on" required />
+                        <div id="errPassword" class="error"></div>
+                    </div>
+                    <br>
+                    <button onclick="login()">login</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div id="about" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="closeAbout">&times;</span>
+            <h1>About Us</h1>
+
+            Hi! We are Liron Refaeli and David Rosenberg, information system engineering students in BGU.
+            <br>
+            We used JQuery librarys such as jQuery 3.3.1 and jQuery validate, for validating user input on the Sign Up
+            and Login forms.
+            <br>
+            We used a templates for the login, the sign up and modal from w3school.
+            <br>
+            We can say that we had a little bit struggle with understanding how the interval works, and what should be
+            the logical flow of the program.
+            Also, designing the project with the css file was challenging for us.
+            <br>
+            We hope you will enjoy playing!
+        </div>
+    </div>
+
+    <div id="settings" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="form">
+                <h2>Settings</h2>
+                <table>
+                    <tr>
+                        <td>Choose how long the game will be (in seconds):</td>
+                        <td>
+                            <input id="time" name="time" class="input" type="number" min="60" value="60" />
+                        </td>
+                        <td>Choose number of monsters:</td>
+                        <td>
+                            <input class="input" id="numOfMonsters" type="number" name="numOfMonsters" placeholder="3"
+                                min="1" max="3" value="3">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose number of point balls:</td>
+                        <td>
+                            <input class="input" id="numOfBalls" type="number" name="numOfBalls" placeholder="50"
+                                min="50" max="90" value="50">
+                        </td>
+                        <td>Choose keyboard keys:</td>
+                        <td>
+                            <input type="radio" name="keyboard" value="1" checked> default arrows<br>
+                            <input type="radio" name="keyboard" value="2"> A,S,D,W<br>
+                            <input type="radio" name="keyboard" value="3"> 1,2,3,5
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose 5 points color:</td>
+                        <td>
+                            <input class="input" id="fivePoints" name="fivePoints" type="color" value="#009900" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose 15 points color:</td>
+                        <td>
+                            <input class="input" id="fifteenPoints" name="fifteenPoints" type="color" value="#0099ff" />
+                        </td>
+                        <td> <button id="randomValBtn" onclick="ChooseValusRandom()"
+                                style="border:black; float:right">Choose Random
+                                Values And Play!</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choose 25 points color:</td>
+                        <td>
+                            <input class="input" id="twentyFivePoints" name="twentyFivePoints" type="color"
+                                value="#cc0099"/>
+                        </td>
+
+                        <td> <button id="playGameBtn" onclick="PlayGame()" style="float:right">Start Game!</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="game" class="centerDiv" style="display: none; overflow: hidden;">
+        <div id="gameContainer">
+            <div id="gameInfo">
+                <table id="gameInfo_table">
+                    <tr>
+                        <div id="userNameTable"></div>
+                    </tr>
+                    <tr>
+                        Score:
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="input" id="labelScore" type="text" > </input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Game Time:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="input" id="labelTime" type="text" > </input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lives:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="life1" class="life">
+                                <img id="Life1" src="heart.png" style="width: 25px;" />
+                            </div>
+                            <div id="life2" class="life">
+                                <img id="Life2" src="heart.png" style="width: 25px;" />
+                            </div>
+                            <div id="life3" class="life">
+                                <img id="Life3" src="heart.png" style="width: 25px;" />
+                            </div>
+                            <div id="life4" class="life" style="visibility: hidden">
+                                <img id="Life4" src="heart.png" style="width: 25px;" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="overflow: hidden">
+                <canvas id="canvas" height="710" width="1130"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+                <h1 id="headline_endGame" style="text-align:center"></h1>
+                <div id="form" style="vertical-align: middle;">
+                <button class="button" id="gameOverAgain_btn" onclick="displaySettings()" >Play Again</button>
+                <button class="button" id="gameOverClose_btn" onclick="display('welcome')">Welcome Page</button>
+            </div>
+            </div>
+
+    </div>
+
+    <footer>
+        <div id="footer_text"> <i class="fa fa-envelope"></i> Contact us: lironref@bgu.post.ac.il, daros@post.bgu.ac.il
+        </div>
+    </footer>
+
+</body>
+
+<script src="siteScript.js" type="text/javascript"></script>
+<script src="gameScript.js" type="text/javascript"></script>
+
+</html>
